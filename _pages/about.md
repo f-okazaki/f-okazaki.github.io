@@ -6,5 +6,8 @@ redirect_from:
   - /about/
   - /about.html
 ---
+**Name** Fumiya Okazaki (岡嵜 郁也)
+ 
+**Affiliation:** Assistant Professor at School of Computing, Institute of Science Tokyo
 
-Email: fumiya.okazaki.q4[at]alumni.tohoku.ac.jp, okazaki.f.660b[at]m.isct.ac.jp
+**Research interests** probability theory, stochastic analysis on manifolds, harmonic maps
