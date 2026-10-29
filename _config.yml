@@ -24,13 +24,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Fumiya Okazaki"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "Math"
+  location         : "Japan"
+  employer         : "Institute of Science Tokyo"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "fumiya.okazaki.q4@alumni.tohoku.ac.jp" 
 
   # Academic websites
   academia         : # URL
