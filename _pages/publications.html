@@ -5,32 +5,54 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<ul id="papers">
+  <li>Loading publications...</li>
+</ul>
 
-{% include base_path %}
+<script>
+(async () => {
+  const id = "fumiyaokazaki?lang=en";
+  const list = document.getElementById("papers");
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  try {
+    const res = await fetch(
+      `https://api.researchmap.jp/${id}/published_papers?limit=100`
+    );
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
+    const data = await res.json();
+    list.replaceChildren();
 
+    for (const paper of data.items ?? []) {
+      const title = paper.paper_title?.en || paper.paper_title?.ja;
+      if (!title) continue;
 
+      const li = document.createElement("li");
+      const strong = document.createElement("strong");
+      strong.textContent = title;
+      li.append(strong);
+
+      const journal =
+        paper.publication_name?.en ||
+        paper.publication_name?.ja || "";
+      const year = paper.publication_date?.slice(0, 4) || "";
+      li.append(` — ${journal} (${year}) `);
+
+      const doi = paper.identifiers?.doi?.[0];
+      if (doi) {
+        const a = document.createElement("a");
+        a.href = `https://doi.org/${doi}`;
+        a.textContent = "DOI";
+        li.append(a);
+      }
+      list.append(li);
+    }
+    if (!list.children.length) {
+      list.textContent = "No publications found.";
+    }
+  } catch (error) {
+    list.textContent = "Could not load publications.";
+    console.error(error);
+  }
+})();
+</script>
