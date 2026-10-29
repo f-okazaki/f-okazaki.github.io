@@ -30,12 +30,13 @@ author:
   location         : "Japan"
   employer         : "Institute of Science Tokyo"
   uri              : # URL
-  email            : "fumiya.okazaki.q4@alumni.tohoku.ac.jp" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
+  researchmap      : "https://researchmap.jp/fumiyaokazaki?lang=en"
   googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   orcid            : "https://orcid.org/yourorcidurl"
+  
 
   # Repositories and software development
 
