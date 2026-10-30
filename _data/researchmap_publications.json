@@ -1,0 +1,63 @@
+{
+  "peer_reviewed": [
+    {
+      "title": "On sensitivities regarding shape and topology optimization as derivatives on Wasserstein spaces",
+      "authors": "Fumiya Okazaki, Takayuki Yamada",
+      "journal": "to appear in Tohoku Series of Mathematical Science, Springer",
+      "year": "2026",
+      "doi_url": "",
+      "arxiv_url": "https://arxiv.org/abs/arXiv:2411.12234"
+    },
+    {
+      "title": "Horizontal $Δ$-semimartingales on orthonormal frame bundles",
+      "authors": "Fumiya Okazaki",
+      "journal": "Osaka Journal of Mathematics (in press)",
+      "year": "2025",
+      "doi_url": "",
+      "arxiv_url": "https://arxiv.org/abs/arXiv:2105.04824"
+    },
+    {
+      "title": "Probabilistic Characterization of Weakly Harmonic Maps with Respect to Non-Local Dirichlet Forms",
+      "authors": "Fumiya Okazaki",
+      "journal": "Potential Analysis",
+      "year": "2024",
+      "doi_url": "https://doi.org/10.1007/s11118-024-10129-5",
+      "arxiv_url": ""
+    },
+    {
+      "title": "Convergence of Martingales with Jumps on Submanifolds of Euclidean Spaces and its Applications to Harmonic Maps",
+      "authors": "Fumiya Okazaki",
+      "journal": "Journal of Theoretical Probability",
+      "year": "2023",
+      "doi_url": "https://doi.org/10.1007/s10959-023-01273-6",
+      "arxiv_url": ""
+    }
+  ],
+  "preprints": [],
+  "unclassified": [
+    {
+      "title": "Stochastic Jacobi fields along discontinuous martingales on Riemannian submanifolds",
+      "authors": "Fumiya Okazaki",
+      "journal": "arXiv.2608.15379",
+      "year": "2026",
+      "doi_url": "",
+      "arxiv_url": "https://arxiv.org/abs/arXiv:2608.15379"
+    },
+    {
+      "title": "Topology optimization concerning the mass distribution via filtered gradient flows on the Wasserstein space",
+      "authors": "Fumiya Okazaki, Takayuki Yamada",
+      "journal": "",
+      "year": "2026",
+      "doi_url": "",
+      "arxiv_url": "https://arxiv.org/abs/arXiv:2601.14332"
+    },
+    {
+      "title": "On sequences of martingales with jumps on Riemannian submanifolds",
+      "authors": "Fumiya Okazaki",
+      "journal": "arXiv:2409.17118v2",
+      "year": "2024",
+      "doi_url": "",
+      "arxiv_url": "https://arxiv.org/abs/arXiv:2409.17118"
+    }
+  ]
+}
