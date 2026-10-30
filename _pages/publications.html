@@ -10,54 +10,90 @@ author_profile: true
   <a href="https://researchmap.jp/fumiyaokazaki" target="_blank" rel="noopener noreferrer">researchmap</a>
 </p>
 
-<ul id="papers">
-  <li>Loading publications...</li>
-</ul>
 
-<script>
-(async () => {
-  const id = "fumiyaokazaki";
-  const list = document.getElementById("papers");
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
 
-  try {
-    const res = await fetch(
-      `https://api.researchmap.jp/${id}/published_papers?limit=100`
-    );
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+{% assign pubdata = site.data.researchmap_publications %}
 
-    const data = await res.json();
-    list.replaceChildren();
+{% if pubdata %}
 
-    for (const paper of data.items ?? []) {
-      const title = paper.paper_title?.en || paper.paper_title?.ja;
-      if (!title) continue;
+<h2>Peer-reviewed Publications</h2>
 
-      const li = document.createElement("li");
-      const strong = document.createElement("strong");
-      strong.textContent = title;
-      li.append(strong);
+<ol>
+{% for paper in pubdata.peer_reviewed %}
+  <li>
+    {% if paper.authors != "" %}
+      {{ paper.authors | escape }}.
+    {% endif %}
 
-      const journal =
-        paper.publication_name?.en ||
-        paper.publication_name?.ja || "";
-      const year = paper.publication_date?.slice(0, 4) || "";
-      li.append(` — ${journal} (${year}) `);
+    <strong>{{ paper.title | escape }}</strong>.
 
-      const doi = paper.identifiers?.doi?.[0];
-      if (doi) {
-        const a = document.createElement("a");
-        a.href = `https://doi.org/${doi}`;
-        a.textContent = "DOI";
-        li.append(a);
-      }
-      list.append(li);
-    }
-    if (!list.children.length) {
-      list.textContent = "No publications found.";
-    }
-  } catch (error) {
-    list.textContent = "Could not load publications.";
-    console.error(error);
-  }
-})();
-</script>
+    {% if paper.journal != "" %}
+      <em>{{ paper.journal | escape }}</em>,
+    {% endif %}
+
+    {% if paper.year != "" %}
+      {{ paper.year | escape }}.
+    {% endif %}
+
+    {% if paper.doi_url != "" %}
+      <a href="{{ paper.doi_url | escape }}">DOI</a>
+    {% endif %}
+
+    {% if paper.arxiv_url != "" %}
+      <a href="{{ paper.arxiv_url | escape }}">arXiv</a>
+    {% endif %}
+  </li>
+{% endfor %}
+</ol>
+
+<h2>Preprints</h2>
+
+<ol>
+{% for paper in pubdata.preprints %}
+  <li>
+    {% if paper.authors != "" %}
+      {{ paper.authors | escape }}.
+    {% endif %}
+
+    <strong>{{ paper.title | escape }}</strong>.
+
+    {% if paper.journal != "" %}
+      <em>{{ paper.journal | escape }}</em>,
+    {% endif %}
+
+    {% if paper.year != "" %}
+      {{ paper.year | escape }}.
+    {% endif %}
+
+    {% if paper.doi_url != "" %}
+      <a href="{{ paper.doi_url | escape }}">DOI</a>
+    {% endif %}
+
+    {% if paper.arxiv_url != "" %}
+      <a href="{{ paper.arxiv_url | escape }}">arXiv</a>
+    {% endif %}
+  </li>
+{% endfor %}
+</ol>
+
+{% else %}
+
+<p>
+  Publication data has not been synchronized yet.
+</p>
+
+{% endif %}
+
+<p>
+  See also:
+  <a href="https://researchmap.jp/fumiyaokazaki"
+     target="_blank"
+     rel="noopener noreferrer">researchmap</a>.
+</p>
+
