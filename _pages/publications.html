@@ -10,83 +10,76 @@ author_profile: true
   <a href="https://researchmap.jp/fumiyaokazaki" target="_blank" rel="noopener noreferrer">researchmap</a>
 </p>
 
-
----
-layout: archive
-title: "Publications"
-permalink: /publications/
-author_profile: true
----
-
 {% assign pubdata = site.data.researchmap_publications %}
 
 {% if pubdata %}
 
-<h2>Peer-reviewed Publications</h2>
+  {% assign empty_list = "" | split: "," %}
+  {% assign peer_reviewed = pubdata.peer_reviewed | default: empty_list %}
+  {% assign preprints = pubdata.preprints | default: empty_list %}
+  {% assign unclassified = pubdata.unclassified | default: empty_list %}
+  {% assign preprints = preprints | concat: unclassified %}
 
-<ol>
-{% for paper in pubdata.peer_reviewed %}
-  <li>
-    {% if paper.authors != "" %}
-      {{ paper.authors | escape }}.
+  {% assign sections = "peer_reviewed,preprints" | split: "," %}
+
+  {% for section in sections %}
+
+    {% if section == "peer_reviewed" %}
+      <h2>Peer-reviewed Publications</h2>
+      {% assign papers = peer_reviewed %}
+    {% else %}
+      <h2>Preprints</h2>
+      {% assign papers = preprints %}
     {% endif %}
 
-    <strong>{{ paper.title | escape }}</strong>.
+    {% if papers.size > 0 %}
 
-    {% if paper.journal != "" %}
-      <em>{{ paper.journal | escape }}</em>,
+      <ol>
+        {% for paper in papers %}
+          <li style="margin-bottom: 1em;">
+
+            <div>
+              <strong>{{ paper.title | escape }}</strong>
+            </div>
+
+            {% if paper.authors and paper.authors != "" %}
+              <div>{{ paper.authors | escape }}</div>
+            {% endif %}
+
+            <div>
+              {% if paper.journal and paper.journal != "" %}
+                <em>{{ paper.journal | escape }}</em>
+              {% endif %}
+
+              {% if paper.year and paper.year != "" %}
+                ({{ paper.year | escape }})
+              {% endif %}
+            </div>
+
+            <div>
+              {% if paper.doi_url and paper.doi_url != "" %}
+                <a href="{{ paper.doi_url | escape }}">DOI</a>
+              {% endif %}
+
+              {% if paper.arxiv_url and paper.arxiv_url != "" %}
+                <a href="{{ paper.arxiv_url | escape }}">arXiv</a>
+              {% endif %}
+            </div>
+
+          </li>
+        {% endfor %}
+      </ol>
+
+    {% else %}
+
+      <p>No entries in the saved data for this section.</p>
+
     {% endif %}
 
-    {% if paper.year != "" %}
-      {{ paper.year | escape }}.
-    {% endif %}
-
-    {% if paper.doi_url != "" %}
-      <a href="{{ paper.doi_url | escape }}">DOI</a>
-    {% endif %}
-
-    {% if paper.arxiv_url != "" %}
-      <a href="{{ paper.arxiv_url | escape }}">arXiv</a>
-    {% endif %}
-  </li>
-{% endfor %}
-</ol>
-
-<h2>Preprints</h2>
-
-<ol>
-{% for paper in pubdata.preprints %}
-  <li>
-    {% if paper.authors != "" %}
-      {{ paper.authors | escape }}.
-    {% endif %}
-
-    <strong>{{ paper.title | escape }}</strong>.
-
-    {% if paper.journal != "" %}
-      <em>{{ paper.journal | escape }}</em>,
-    {% endif %}
-
-    {% if paper.year != "" %}
-      {{ paper.year | escape }}.
-    {% endif %}
-
-    {% if paper.doi_url != "" %}
-      <a href="{{ paper.doi_url | escape }}">DOI</a>
-    {% endif %}
-
-    {% if paper.arxiv_url != "" %}
-      <a href="{{ paper.arxiv_url | escape }}">arXiv</a>
-    {% endif %}
-  </li>
-{% endfor %}
-</ol>
+  {% endfor %}
 
 {% else %}
 
-<p>
-  Publication data has not been synchronized yet.
-</p>
+  <p>Publication data has not been synchronized yet.</p>
 
 {% endif %}
-
