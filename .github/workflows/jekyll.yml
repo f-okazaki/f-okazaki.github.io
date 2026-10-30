@@ -31,7 +31,7 @@ jobs:
     if: >-
       github.event_name == 'workflow_dispatch' &&
       inputs.task == 'sync'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
