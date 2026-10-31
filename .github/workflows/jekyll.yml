@@ -25,7 +25,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # 手動でresearchmapのデータを取得し、変更があればCommitする
   sync:
     if: >-
       github.event_name == 'workflow_dispatch' &&
@@ -35,23 +34,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: master
 
-      - name: Fetch researchmap publications
+      - name: Fetch researchmap publications and CV
         run: python3 scripts/sync_researchmap.py
 
-      - name: Commit publication data
+      - name: Commit researchmap data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add _data/researchmap_publications.json
+          git add \
+            _data/researchmap_publications.json \
+            _data/researchmap_cv.json
 
           if ! git diff --cached --quiet; then
-            git commit -m "Update publications from researchmap"
+            git commit -m "Update publications and CV from researchmap"
             git push origin HEAD:master
           fi
 
-  # 通常のCommit、または手動のpublishでサイトをビルドする
   build:
     if: >-
       github.event_name == 'push' ||
@@ -82,17 +84,14 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
-  # ビルドしたサイトを公開する
   deploy:
     if: >-
       github.event_name == 'push' ||
       (github.event_name == 'workflow_dispatch' &&
        inputs.task == 'publish')
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-24.04
     needs: build
 
@@ -100,4 +99,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
