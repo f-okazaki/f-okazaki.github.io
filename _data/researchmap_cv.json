@@ -1,0 +1,131 @@
+{
+  "sections": [
+    {
+      "title": "Education",
+      "items": [
+        {
+          "period": "Apr 2021 – Mar 2024",
+          "text": "Tohoku University, Graduate School of Science, Department of Mathematics",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/education/46189172",
+          "missing_english": []
+        }
+      ]
+    },
+    {
+      "title": "Work Experience",
+      "items": [
+        {
+          "period": "Aug 2025 – Present",
+          "text": "Assistant Professor, Institute of Science Tokyo, School of Computing",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/research_experience/50780073",
+          "missing_english": []
+        },
+        {
+          "period": "Apr 2024 – Jul 2025",
+          "text": "Project Researcher, The University of Tokyo, The Graduate School of Engineering Department of Mechanical Engineering",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/research_experience/46189112",
+          "missing_english": []
+        },
+        {
+          "period": "Apr 2022 – Mar 2024",
+          "text": "Japan Society for the Promotion of Science Research Fellowships for Young Scientists DC2",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/research_experience/46189103",
+          "missing_english": []
+        }
+      ]
+    },
+    {
+      "title": "Teaching",
+      "items": [
+        {
+          "period": "Jun 2026 – Jul 2026",
+          "text": "Fundamentals of Probability, Institute of Science Tokyo",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/teaching_experience/54582811",
+          "missing_english": []
+        },
+        {
+          "period": "Sep 2025 – Mar 2026",
+          "text": "Forum on Computing, Institute of Science Tokyo",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/teaching_experience/52090659",
+          "missing_english": []
+        },
+        {
+          "period": "Apr 2022 – Mar 2023",
+          "text": "Calculus II (Exercises), Sendai National College of Technology",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/teaching_experience/46928739",
+          "missing_english": []
+        }
+      ]
+    },
+    {
+      "title": "Professional Memberships",
+      "items": [
+        {
+          "period": "Jul 2025 – Present",
+          "text": "Japan Society for Industrial and Applied Mathematics",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/association_memberships/54695025",
+          "missing_english": []
+        },
+        {
+          "period": "Apr 2024 – Present",
+          "text": "The Mathematical Society of Japan",
+          "grant_number": "",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/association_memberships/48787604",
+          "missing_english": []
+        }
+      ]
+    },
+    {
+      "title": "Research Grants",
+      "items": [
+        {
+          "period": "Apr 2025 – Mar 2029",
+          "text": "English details are not registered on researchmap.",
+          "grant_number": "25K17264",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/research_projects/49952785",
+          "missing_english": [
+            "research_project_title",
+            "offer_organization",
+            "system_name",
+            "category",
+            "institution_name"
+          ]
+        },
+        {
+          "period": "Jul 2024 – Mar 2026",
+          "text": "English details are not registered on researchmap.",
+          "grant_number": "24K22827",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/research_projects/47535630",
+          "missing_english": [
+            "research_project_title",
+            "offer_organization",
+            "system_name",
+            "category",
+            "institution_name"
+          ]
+        },
+        {
+          "period": "Mar 2023 – Mar 2024",
+          "text": "English details are not registered on researchmap.",
+          "grant_number": "22KJ0237",
+          "source_url": "https://researchmap.jp/fumiyaokazaki/research_projects/46218096",
+          "missing_english": [
+            "research_project_title",
+            "offer_organization",
+            "system_name",
+            "category",
+            "institution_name"
+          ]
+        }
+      ]
+    }
+  ]
+}
