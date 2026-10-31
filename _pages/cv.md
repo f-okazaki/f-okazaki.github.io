@@ -6,34 +6,12 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-
-Education
-======
-* Ph.D in Sciecne, Tohoku University, 2024
-* M.S. in Science, Tohoku University, 2021
-* B.S. in Science, Tohoku University, 2019
-
-Work experience
-======
-* August 2025: Assistant Professor
-  * Institute of Science Tokyo
-
-* April 2024--July 2025: Resercher
-  * The University of Tokyo
-
-* April 2022--March 2024: JSPS
-  * Tohoku University
-
-  
-Teaching
-======
-
----
-layout: archive
-title: "CV"
-permalink: /cv/
-author_profile: true
----
+<p>
+See also:
+<a href="https://researchmap.jp/fumiyaokazaki"
+   target="_blank"
+   rel="noopener noreferrer">researchmap</a>.
+</p>
 
 {% assign cvdata = site.data.researchmap_cv %}
 
@@ -66,11 +44,6 @@ Some details have no English entry on researchmap.
 </small>
 {% endif %}
 
-<br>
-<a href="{{ item.source_url | escape }}"
-   target="_blank"
-   rel="noopener noreferrer">researchmap</a>
-
 </li>
 {% endfor %}
 </ul>
@@ -88,10 +61,3 @@ Some details have no English entry on researchmap.
 <p>CV data has not been synchronized yet.</p>
 
 {% endif %}
-
-<p>
-See also:
-<a href="https://researchmap.jp/fumiyaokazaki"
-   target="_blank"
-   rel="noopener noreferrer">researchmap</a>.
-</p>
