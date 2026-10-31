@@ -13,7 +13,7 @@ See also:
    rel="noopener noreferrer">researchmap</a>.
 </p>
 
-*Degree*: Doctor of Science (March, 2024, Tohoku University)
+**Degree**: Doctor of Science (March, 2024, Tohoku University)
 
 {% assign cvdata = site.data.researchmap_cv %}
 
