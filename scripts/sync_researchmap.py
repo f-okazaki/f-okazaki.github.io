@@ -224,7 +224,7 @@ def make_cv_item(item, kind, fields):
         if isinstance(value, dict) and any(value.values()) and not english:
             missing.append(field)
 
-        if kind == "research_projects":
+    if kind == "research_projects":
         role_labels = {
             "principal_investigator": "Principal Investigator",
             "coinvestigator": "Co-Investigator",
