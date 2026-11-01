@@ -224,6 +224,17 @@ def make_cv_item(item, kind, fields):
         if isinstance(value, dict) and any(value.values()) and not english:
             missing.append(field)
 
+        if kind == "research_projects":
+        role_labels = {
+            "principal_investigator": "Principal Investigator",
+            "coinvestigator": "Co-Investigator",
+            "coinvestigator_not_use_grants": "Collaborating Researcher",
+            "others": "Other",
+        }
+        role = role_labels.get(item.get("research_project_owner_role"))
+        if role:
+            parts.append(f"Role: {role}")
+
     source = f"https://researchmap.jp/{RESEARCHMAP_ID}/{kind}"
     if item.get("rm:id") is not None:
         source += "/" + quote(str(item["rm:id"]), safe="")
